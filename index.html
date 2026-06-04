@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide Ethiopia — AI Travel Assistant</title>
+    <title>Guide Ethiopia — Knowledge HQ</title>
     <style>
         * {
             margin: 0;
@@ -13,238 +13,192 @@
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(180deg, #0a1f1a 0%, #0d3328 100%);
+            background: #0a1f1a;
             color: #fff;
             min-height: 100vh;
         }
 
-        /* ── HERO ── */
-        .hero {
+        /* ── HEADER ── */
+        header {
             text-align: center;
-            padding: 40px 16px 24px;
+            padding: 32px 16px 16px;
         }
-        .hero .flag {
-            font-size: 48px;
+        header .icon {
+            font-size: 44px;
+            margin-bottom: 6px;
         }
-        .hero h1 {
-            font-size: clamp(1.6rem, 5vw, 2.6rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, #f0d78c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 8px 0;
-        }
-        .hero p {
-            font-size: 0.95rem;
-            color: #a8d5b5;
-            max-width: 480px;
-            margin: 0 auto 20px;
-            line-height: 1.6;
-        }
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-        }
-        .badge {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.18);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            color: #f0d78c;
-        }
-
-        /* ── STATS ── */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            padding: 16px 12px 28px;
-        }
-        .stat {
-            text-align: center;
-            min-width: 70px;
-        }
-        .stat .num {
-            font-size: 1.6rem;
+        header h1 {
+            font-size: 1.5rem;
             font-weight: 800;
             color: #f0d78c;
         }
-        .stat .label {
-            font-size: 0.72rem;
+        header p {
+            font-size: 0.82rem;
             color: #a8d5b5;
+            margin-top: 4px;
         }
 
-        /* ── CHAT ── */
-        .chat-section {
-            background: #0d3328;
-            margin: 0 auto;
-            padding: 20px 12px 40px;
-            max-width: 800px;
-        }
-        .chat-section h2 {
-            color: #f0d78c;
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-        .chat-section .subtitle {
-            color: #a8d5b5;
-            text-align: center;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-        }
-        .chat-container {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            height: 60vh;
-            min-height: 420px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-        }
-        .chat-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ── FEATURES ── */
-        .features {
+        /* ── CARDS ── */
+        .cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            max-width: 800px;
-            margin: 28px auto;
-            padding: 0 12px;
+            gap: 10px;
+            padding: 12px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .feature {
+        .card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 14px;
-            padding: 18px 14px;
+            padding: 18px 12px;
             text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.2s;
         }
-        .feature .icon {
-            font-size: 28px;
-            margin-bottom: 6px;
+        .card:active {
+            background: rgba(255,255,255,0.12);
         }
-        .feature h3 {
+        .card .card-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .card h3 {
             font-size: 0.9rem;
             color: #f0d78c;
             margin-bottom: 4px;
         }
-        .feature p {
-            font-size: 0.75rem;
+        .card p {
+            font-size: 0.7rem;
             color: #a8d5b5;
             line-height: 1.4;
         }
 
-        /* ── CTA ── */
-        .cta {
-            text-align: center;
-            padding: 24px 16px 50px;
+        /* ── DESTINATIONS ── */
+        .destinations {
+            padding: 20px 16px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .cta a {
-            background: #f0d78c;
-            color: #0d3328;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
+        .destinations h2 {
             font-size: 1rem;
-            display: inline-block;
+            color: #f0d78c;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .dest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+        .dest-tag {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: #cde6d0;
+        }
+
+        /* ── STATS BAR ── */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .stats-bar .s {
+            text-align: center;
+        }
+        .stats-bar .s .n {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #f0d78c;
+        }
+        .stats-bar .s .l {
+            font-size: 0.65rem;
+            color: #a8d5b5;
         }
 
         /* ── FOOTER ── */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 24px;
+            font-size: 0.65rem;
             color: #a8d5b5;
-            font-size: 0.72rem;
             opacity: 0.5;
         }
 
-        /* ── TABLET UP ── */
-        @media (min-width: 600px) {
-            .hero {
-                padding: 60px 20px 30px;
+        @media (min-width: 500px) {
+            .cards {
+                grid-template-columns: 1fr 1fr 1fr;
             }
-            .features {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 16px;
-                padding: 0 20px;
-            }
-            .chat-container {
-                height: 520px;
-            }
-            .stats {
-                gap: 40px;
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="flag">🇪🇹</div>
+    <header>
+        <div class="icon">🧠</div>
         <h1>Guide Ethiopia</h1>
-        <p>Your AI travel companion. Verified local knowledge, real prices, instant answers.</p>
-        <div class="badges">
-            <span class="badge">🗣️ EN & AM</span>
-            <span class="badge">📍 15+ Places</span>
-            <span class="badge">💰 Real Prices</span>
-            <span class="badge">✅ Verified</span>
+        <p>Knowledge Base — Verified Travel Intelligence</p>
+    </header>
+
+    <section class="stats-bar">
+        <div class="s"><div class="n">22+</div><div class="l">Entries</div></div>
+        <div class="s"><div class="n">15+</div><div class="l">Places</div></div>
+        <div class="s"><div class="n">2026</div><div class="l">Updated</div></div>
+        <div class="s"><div class="n">✅</div><div class="l">Verified</div></div>
+    </section>
+
+    <section class="cards">
+        <a href="https://ethioian-ethiopia-tour-guide.hf.space" class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI Chat</h3>
+            <p>Ask anything about Ethiopia</p>
+        </a>
+        <a href="https://ethioian-ethiopia-knowledge-hq.hf.space" class="card">
+            <div class="card-icon">📝</div>
+            <h3>Knowledge HQ</h3>
+            <p>Manage knowledge base</p>
+        </a>
+        <div class="card">
+            <div class="card-icon">📦</div>
+            <h3>Export</h3>
+            <p>AI-ready data feeds</p>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="stat"><div class="num">22+</div><div class="label">Entries</div></div>
-        <div class="stat"><div class="num">15+</div><div class="label">Places</div></div>
-        <div class="stat"><div class="num">24/7</div><div class="label">Online</div></div>
-        <div class="stat"><div class="num">Free</div><div class="label">Forever</div></div>
-    </section>
-
-    <section class="chat-section" id="chat">
-        <h2>Ask Me Anything About Ethiopia</h2>
-        <p class="subtitle">Try: "Taxi from Bole Airport?" or "Lalibela entrance fee?"</p>
-        <div class="chat-container">
-            <iframe src="https://ethioian-ethiopia-tour-guide.hf.space" title="Guide Ethiopia Chat" loading="lazy"></iframe>
+    <section class="destinations">
+        <h2>📍 Destinations Covered</h2>
+        <div class="dest-list">
+            <span class="dest-tag">Addis Ababa</span>
+            <span class="dest-tag">Lalibela</span>
+            <span class="dest-tag">Gonder</span>
+            <span class="dest-tag">Bahir Dar</span>
+            <span class="dest-tag">Axum</span>
+            <span class="dest-tag">Simien Mountains</span>
+            <span class="dest-tag">Danakil</span>
+            <span class="dest-tag">Harar</span>
+            <span class="dest-tag">Arba Minch</span>
+            <span class="dest-tag">Bale Mountains</span>
+            <span class="dest-tag">Hawassa</span>
+            <span class="dest-tag">Dire Dawa</span>
+            <span class="dest-tag">Mekelle</span>
+            <span class="dest-tag">Omo Valley</span>
+            <span class="dest-tag">Konso</span>
         </div>
-    </section>
-
-    <section class="features">
-        <div class="feature">
-            <div class="icon">📍</div>
-            <h3>Local Intel</h3>
-            <p>Real prices, verified by locals.</p>
-        </div>
-        <div class="feature">
-            <div class="icon">🗣️</div>
-            <h3>Bilingual</h3>
-            <p>English & Amharic.</p>
-        </div>
-        <div class="feature">
-            <div class="icon">⚡</div>
-            <h3>Instant</h3>
-            <p>Cached answers in milliseconds.</p>
-        </div>
-        <div class="feature">
-            <div class="icon">🔒</div>
-            <h3>Private</h3>
-            <p>No tracking. No accounts.</p>
-        </div>
-    </section>
-
-    <section class="cta">
-        <a href="#chat">🇪🇹 Explore Ethiopia</a>
     </section>
 
     <footer>
-        <p>Guide Ethiopia &copy; 2026 · Built with love in Ethiopia · Powered by AI</p>
+        <p>Guide Ethiopia &copy; 2026 · Built in Ethiopia · Verified Local Knowledge</p>
     </footer>
 
 </body>
