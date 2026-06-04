@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Ethiopia - AI Travel Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a1f1a 0%, #0d3328 30%, #1a5c3a 70%, #c8962e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+
+        .hero .flag {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #f0d78c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #cde6d0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .hero .badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #f0d78c;
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 30px 20px 50px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f0d78c;
+        }
+
+        .stat .label {
+            font-size: 0.9rem;
+            color: #cde6d0;
+        }
+
+        /* CHAT SECTION */
+        .chat-section {
+            background: #fff;
+            border-radius: 24px 24px 0 0;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
+        }
+
+        .chat-section h2 {
+            color: #0d3328;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .chat-section .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .chat-container {
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 550px;
+        }
+
+        .chat-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature .icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #f0d78c;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            color: #cde6d0;
+            line-height: 1.5;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 40px 20px 60px;
+        }
+
+        .cta a {
+            background: #f0d78c;
+            color: #0d3328;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .cta a:hover {
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #cde6d0;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .stats {
+                gap: 20px;
+            }
+            .stat .num {
+                font-size: 1.8rem;
+            }
+            .chat-container {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="flag">🇪🇹</div>
+        <h1>Guide Ethiopia</h1>
+        <p>
+            Your AI-powered travel companion for exploring Ethiopia. 
+            Get instant, verified answers about destinations, prices, safety, culture, and more.
+        </p>
+        <div class="badges">
+            <span class="badge">🗣️ English & Amharic</span>
+            <span class="badge">📍 15+ Destinations</span>
+            <span class="badge">💰 Real Prices</span>
+            <span class="badge">✅ Verified Info</span>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat">
+            <div class="num">22+</div>
+            <div class="label">Knowledge Entries</div>
+        </div>
+        <div class="stat">
+            <div class="num">15+</div>
+            <div class="label">Destinations</div>
+        </div>
+        <div class="stat">
+            <div class="num">24/7</div>
+            <div class="label">Always Available</div>
+        </div>
+        <div class="stat">
+            <div class="num">Free</div>
+            <div class="label">Forever</div>
+        </div>
+    </section>
+
+    <!-- CHAT -->
+    <section class="chat-section" id="chat">
+        <h2>Ask Me Anything About Ethiopia</h2>
+        <p class="subtitle">Try: "Best time to visit Lalibela?" or "How much is a taxi from Bole Airport?"</p>
+        <div class="chat-container">
+            <iframe
+                src="https://ethioian-ethiopia-tour-guide.hf.space"
+                title="Guide Ethiopia Chatbot"
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="feature">
+            <div class="icon">📍</div>
+            <h3>Local Knowledge</h3>
+            <p>Real prices, real places, real safety tips — verified by locals, not scraped from the web.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🗣️</div>
+            <h3>Multilingual</h3>
+            <p>Ask in English or Amharic. Get answers in the same language with proper cultural context.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">⚡</div>
+            <h3>Instant Answers</h3>
+            <p>Frequently asked questions answered instantly from cache. No waiting, no searching.</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>No accounts. No tracking. No data collection. Just answers to your travel questions.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <a href="#chat">🇪🇹 Start Exploring Ethiopia</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Guide Ethiopia &copy; 2026 — Built for travelers, by locals. Powered by AI.</p>
+    </footer>
+
+</body>
+</html>
